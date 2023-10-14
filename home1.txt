@@ -1,0 +1,22 @@
+import time
+from selenium import webdriver
+driver = webdriver.Chrome(executable_path='C:/chromedriver.exe')
+driver.maximize_window()
+driver.implicitly_wait(10)
+driver.get("https://practice.automationtesting.in/")
+driver.execute_script("window.scrollBy(0,600);")
+login_btn = driver.find_element_by_xpath('//img[@alt="Selenium Ruby"]')
+login_btn.click()
+login_btn = driver.find_element_by_xpath('//a[@href="#tab-reviews"]')
+login_btn.click()
+login_btn = driver.find_element_by_xpath('//a[@class="star-5"]')
+login_btn.click()
+login = driver.find_element_by_id("comment")
+login.send_keys("Nice book!")
+login = driver.find_element_by_id("author")
+login.send_keys("Svetlana")
+login = driver.find_element_by_id("email")
+login.send_keys("fokinasva@ya.ru")
+login_btn = driver.find_element_by_xpath('//input[@name="submit"]')
+login_btn.click()
+
